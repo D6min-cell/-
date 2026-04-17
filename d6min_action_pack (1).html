@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行動素材包｜第六敏 @d6min_ai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #1C2333;
+    --bg-card: #252D3D;
+    --bg-deep: #161C28;
+    --accent: #C4B8A8;
+    --blue: #7B9EC4;
+    --text: #FFFFFF;
+    --text-muted: rgba(255,255,255,0.45);
+    --border: rgba(196,184,168,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-deep);
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; color: #111; }
+    .no-print { display: none !important; }
+    .page { background: #fff !important; color: #111 !important; page-break-after: always; break-after: page; }
+    .page-inner { background: #fff !important; }
+    :root {
+      --bg-main: #f8f7f5;
+      --bg-card: #f0ede8;
+      --accent: #8a7d6e;
+      --blue: #4a6f9a;
+      --text: #111;
+      --text-muted: rgba(0,0,0,0.45);
+    }
+  }
+
+  /* ── COVER AREA ── */
+  .site-header {
+    background: linear-gradient(160deg, #1a2840 0%, #0d1420 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    border-bottom: 1px solid rgba(196,184,168,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(196,184,168,0.07) 0%, transparent 65%);
+  }
+
+  .brand-tag {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: rgba(196,184,168,0.55);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .header-title .gold { color: #E8C97A; }
+
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    position: relative;
+  }
+
+  .header-deco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    position: relative;
+  }
+
+  .deco-line { width: 32px; height: 1px; background: rgba(196,184,168,0.3); }
+  .deco-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(196,184,168,0.5); }
+
+  /* ── NAV ── */
+  .toc-nav {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .toc-nav a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 14px 18px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .toc-nav a:hover, .toc-nav a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    flex-wrap: nowrap;
+  }
+
+  .section-num {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .section-title-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .section-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .section-line {
+    flex: 1;
+    min-width: 20px;
+    height: 1px;
+    background: var(--border);
+    margin-left: 8px;
+    flex-shrink: 1;
+  }
+
+  .section-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 20px;
+    padding-left: 2px;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .card-body {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.85;
+  }
+
+  /* ── FOLDER GRID ── */
+  .folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .folder-item {
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 0.5px solid var(--border);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .folder-icon {
+    width: 28px;
+    height: 22px;
+    border-radius: 4px 8px 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+  }
+
+  .folder-icon.c1 { background: rgba(196,184,168,0.18); }
+  .folder-icon.c2 { background: rgba(123,158,196,0.18); }
+  .folder-icon.c3 { background: rgba(196,184,168,0.12); }
+  .folder-icon.c4 { background: rgba(123,158,196,0.12); }
+  .folder-icon.c5 { background: rgba(196,184,168,0.08); }
+
+  .folder-name {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .folder-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── NOTE TEMPLATE ── */
+  .note-template {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .note-header {
+    background: var(--bg-deep);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .note-dot-row { display: flex; gap: 5px; }
+  .note-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .note-dot.r { background: rgba(255,100,100,0.4); }
+  .note-dot.y { background: rgba(255,200,50,0.4); }
+  .note-dot.g { background: rgba(50,200,100,0.4); }
+
+  .note-title-bar {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    flex: 1;
+    text-align: center;
+  }
+
+  .note-body {
+    padding: 20px 22px;
+  }
+
+  .note-field {
+    margin-bottom: 16px;
+  }
+
+  .note-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  .note-input {
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .note-input.filled {
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 0.5px solid var(--border);
+    cursor: pointer;
+    transition: border-color 0.2s;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: rgba(196,184,168,0.3); }
+  .check-item.checked { border-color: rgba(196,184,168,0.25); background: rgba(196,184,168,0.07); }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(196,184,168,0.35);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    transition: all 0.2s;
+  }
+
+  .check-item.checked .check-box {
+    background: rgba(196,184,168,0.25);
+    border-color: var(--accent);
+  }
+
+  .check-mark {
+    font-size: 11px;
+    color: var(--accent);
+    display: none;
+  }
+
+  .check-item.checked .check-mark { display: block; }
+
+  .check-text { flex: 1; }
+
+  .check-main {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 3px;
+    line-height: 1.4;
+    transition: color 0.2s;
+  }
+
+  .check-item.checked .check-main {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.2);
+  }
+
+  .check-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .check-week {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    padding-left: 2px;
+  }
+
+  /* ── ACTION GUIDE ── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent), var(--blue), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    background: var(--bg-deep);
+  }
+
+  .timeline-item:first-child .timeline-dot { background: var(--accent); }
+
+  .timeline-time {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 5px;
+  }
+
+  .timeline-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    background: rgba(196,184,168,0.07);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+
+  .quote-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .quote-source {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-top: 8px;
+  }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    background: rgba(123,158,196,0.15);
+    border: 0.5px solid rgba(123,158,196,0.3);
+    border-radius: 4px;
+    padding: 3px 9px;
+    font-size: 10px;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  /* ── RESET BTN ── */
+  .reset-btn {
+    background: none;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 11px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: all 0.2s;
+    margin-top: 12px;
+  }
+
+  .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .footer-deco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .progress-bar-footer {
+    height: 2px;
+    width: 80px;
+    background: linear-gradient(90deg, var(--accent), var(--blue));
+    border-radius: 1px;
+  }
+
+  /* ── PRINT BTN ── */
+  .print-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: var(--accent);
+    font-size: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.08em;
+    transition: all 0.2s;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .print-btn:hover { background: rgba(196,184,168,0.12); border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <div class="brand-tag">@d6min_ai — 第六敏 行動資源包</div>
+  <div class="header-title">收藏從未停止<br><span class="gold">行動從未開始</span></div>
+  <div class="header-sub">你留言了「行動」<br>這份素材包是給真的想改變的你</div>
+  <div class="header-deco">
+    <div class="deco-line"></div>
+    <div class="deco-dot"></div>
+    <div class="deco-line"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="toc-nav no-print">
+  <a href="#folder" class="active">收藏分類</a>
+  <a href="#note">筆記範本</a>
+  <a href="#checklist">週回顧清單</a>
+  <a href="#guide">行動指南</a>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ── SECTION 1: FOLDER TEMPLATE ── -->
+  <div class="section" id="folder">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <div class="section-tag">收藏分類模板</div>
+        <div class="section-title">五個資料夾，讓收藏有家可回</div>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="section-desc">
+      不需要分得太細，5 個主題分類就夠用。<br>
+      每次收藏前只要問自己一個問題：「這篇最像哪個資料夾？」選一個放進去，30 秒完成。
+    </div>
+
+    <div class="folder-grid">
+      <div class="folder-item">
+        <div class="folder-icon c1">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x="0" y="2" width="14" height="10" rx="2" fill="rgba(196,184,168,0.5)"/><rect x="0" y="0" width="6" height="4" rx="1.5" fill="rgba(196,184,168,0.35)"/></svg>
+        </div>
+        <div class="folder-name">貼文技巧</div>
+        <div class="folder-hint">寫文案、標題、開場白、結尾 CTA 的教學</div>
+      </div>
+      <div class="folder-item">
+        <div class="folder-icon c2">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x="0" y="2" width="14" height="10" rx="2" fill="rgba(123,158,196,0.5)"/><rect x="0" y="0" width="6" height="4" rx="1.5" fill="rgba(123,158,196,0.35)"/></svg>
+        </div>
+        <div class="folder-name">自媒體經營</div>
+        <div class="folder-hint">帳號定位、演算法、增粉策略、變現方式</div>
+      </div>
+      <div class="folder-item">
+        <div class="folder-icon c3">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x="0" y="2" width="14" height="10" rx="2" fill="rgba(196,184,168,0.4)"/><rect x="0" y="0" width="6" height="4" rx="1.5" fill="rgba(196,184,168,0.25)"/></svg>
+        </div>
+        <div class="folder-name">AI 工具</div>
+        <div class="folder-hint">提示詞技巧、工具推薦、效率工作流</div>
+      </div>
+      <div class="folder-item">
+        <div class="folder-icon c4">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x="0" y="2" width="14" height="10" rx="2" fill="rgba(123,158,196,0.4)"/><rect x="0" y="0" width="6" height="4" rx="1.5" fill="rgba(123,158,196,0.25)"/></svg>
+        </div>
+        <div class="folder-name">心態 ＆ 習慣</div>
+        <div class="folder-hint">自律、克服拖延、創業心法、個人成長</div>
+      </div>
+      <div class="folder-item">
+        <div class="folder-icon c5">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x="0" y="2" width="14" height="10" rx="2" fill="rgba(196,184,168,0.25)"/><rect x="0" y="0" width="6" height="4" rx="1.5" fill="rgba(196,184,168,0.15)"/></svg>
+        </div>
+        <div class="folder-name">金句靈感</div>
+        <div class="folder-hint">讓你有感覺的話、想用在貼文的觀點</div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">分類本身就是一種思考。當你決定「這篇放進 AI 工具」，你已經比收藏時更清醒了一步。</div>
+      <div class="quote-source">— 第六敏 @d6min_ai</div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: NOTE TEMPLATE ── -->
+  <div class="section" id="note">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-wrap">
+        <div class="section-tag">筆記頁面範本</div>
+        <div class="section-title">有感金句，這樣記才記得住</div>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="section-desc">
+      每次看到讓你心動的句子，用這個格式記一次。<br>
+      不需要全篇抄，一句有感覺的話就夠了。記的動作本身就是消化的開始。
+    </div>
+
+    <div class="note-template">
+      <div class="note-header">
+        <div class="note-dot-row">
+          <div class="note-dot r"></div>
+          <div class="note-dot y"></div>
+          <div class="note-dot g"></div>
+        </div>
+        <div class="note-title-bar">有感金句筆記 — 範本格式</div>
+      </div>
+      <div class="note-body">
+        <div class="note-field">
+          <div class="note-label">來源帳號 ／ 日期</div>
+          <div class="note-input filled">@d6min_ai — 2026.04</div>
+        </div>
+        <div class="note-field">
+          <div class="note-label">讓我有感觸的那句話</div>
+          <div class="note-input filled">「收藏不是終點，分類才是讓知識活起來的第一步。」</div>
+        </div>
+        <div class="note-field">
+          <div class="note-label">我有感覺是因為⋯⋯</div>
+          <div class="note-input">我之前一直以為收藏代表學到了，但這句話讓我意識到我根本沒有消化過⋯⋯</div>
+        </div>
+        <div class="note-field">
+          <div class="note-label">我可以把這個觀念用在哪裡？</div>
+          <div class="note-input">下週的 IG 貼文，或是用來解釋我為什麼要做這個帳號</div>
+        </div>
+        <div class="note-field">
+          <div class="note-label">最小行動（今天可以做的一件事）</div>
+          <div class="note-input">建立一個「金句靈感」資料夾，把這篇放進去</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">用什麼 App 記都可以</div>
+      <div class="card-body">
+        備忘錄、Notion、Obsidian、甚至 IG 的草稿都行。<br>
+        重要的不是工具，是「記」這個動作。<br>
+        有感覺 → 停下來 → 抄一句 → 貼上格式 → 完成。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: WEEKLY CHECKLIST ── -->
+  <div class="section" id="checklist">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <div class="section-tag">週回顧清單</div>
+        <div class="section-title">每週 10 分鐘，讓知識從「存過」變「用過」</div>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="section-desc">
+      固定一天做這個回顧，建議是週日晚上或週一早上。<br>
+      不需要全部讀完，快速瀏覽就好。打勾的感覺會讓你想繼續。
+    </div>
+
+    <div class="check-week">每週固定回顧 — 可互動版</div>
+
+    <div class="checklist" id="checklistEl">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">打開上週的收藏，快速掃一遍</div>
+          <div class="check-sub">不需要全讀，看一眼標題、感受一下哪篇還記得</div>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">找出 1 篇「這週真的用得到」的貼文</div>
+          <div class="check-sub">可以是靈感、可以是技巧，只要選 1 篇就夠</div>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">把「有感那句話」抄進筆記</div>
+          <div class="check-sub">用上面那個筆記格式記下來，一句就好</div>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">刪掉 3 篇「當初不知道為什麼收的」貼文</div>
+          <div class="check-sub">清空舊的，才有空間放進新的靈感</div>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">決定這週「最小行動」是什麼</div>
+          <div class="check-sub">從筆記裡找一個可執行的事，今天就做</div>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text">
+          <div class="check-main">確認 5 個資料夾分類還夠用</div>
+          <div class="check-sub">如果有很多沒家的收藏，考慮新增或合併</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="reset-btn no-print" onclick="resetChecklist()">重置清單</button>
+  </div>
+
+  <!-- ── SECTION 4: ACTION GUIDE ── -->
+  <div class="section" id="guide">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <div class="section-tag">行動啟動指南</div>
+        <div class="section-title">從今天開始，30 天養成習慣</div>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="section-desc">
+      不是要你一次全部做到。<br>
+      第一週只做一件事，習慣就會自己長出來。
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Day 1 — 今天</div>
+        <div class="timeline-title">建立 5 個資料夾，把現有收藏分類一遍</div>
+        <div class="timeline-desc">不需要全部整理好，先把最近 10 篇分類就夠。<br>感受一下「分類完」的感覺跟「存完不管」有什麼不同。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Day 3 — 第一次記筆記</div>
+        <div class="timeline-title">下次收藏時，附上一句「有感話語」</div>
+        <div class="timeline-desc">打開備忘錄，用筆記格式記下你為什麼收這篇。<br>哪怕只是一句「這個寫法我以後想試試」也算。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Day 7 — 第一次週回顧</div>
+        <div class="timeline-title">定好固定時間，完成第一次週回顧清單</div>
+        <div class="timeline-desc">找一個你每週都有空的時段（例如週日晚上 10 點）。<br>打開清單，走一遍，全部打勾。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Day 14 — 兩週後</div>
+        <div class="timeline-title">從筆記裡找一個觀念，實際用出來</div>
+        <div class="timeline-desc">發一篇貼文、跟朋友說一個觀點、或改掉一個工作習慣。<br>用過一次之後，那個知識就真的是你的了。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">Day 30 — 一個月後</div>
+        <div class="timeline-title">回頭看看你的筆記累積了多少</div>
+        <div class="timeline-desc">你會發現你已經不是「收藏後就忘」的那個人了。<br>這就是行動最安靜但最真實的改變。</div>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:28px;">
+      <div class="quote-text">你不需要等到準備好才開始。<br>你只需要今天做一件很小的事。</div>
+      <div class="quote-source">— 第六敏 @d6min_ai</div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="site-footer">
+  <div class="footer-brand">第六敏 × @d6min_ai</div>
+  <div class="footer-sub">
+    AI 工具教學 × 自媒體變現<br>
+    如果這份素材有幫助到你，歡迎分享給也在掙扎的朋友
+  </div>
+  <div class="footer-deco">
+    <div class="progress-bar-footer"></div>
+  </div>
+</div>
+
+<!-- PRINT BTN -->
+<button class="print-btn no-print" onclick="window.print()">存成 PDF</button>
+
+<script>
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+}
+
+function resetChecklist() {
+  document.querySelectorAll('.check-item.checked').forEach(el => {
+    el.classList.remove('checked');
+  });
+}
+
+// Active nav highlight on scroll
+const sections = ['folder', 'note', 'checklist', 'guide'];
+const navLinks = document.querySelectorAll('.toc-nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
